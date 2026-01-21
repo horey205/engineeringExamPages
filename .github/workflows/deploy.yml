@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Deploy to engineeringExamPages
+        run: |
+          git config --global user.name "horey205"
+          git config --global user.email "horey205@gmail.com"
+          
+          # Clone target repository
+          git clone https://x-access-token:${{ secrets.API_TOKEN_GITHUB }}@github.com/horey205/engineeringExamPages.git target_repo
+          
+          # Copy files (excluding .git directory)
+          rsync -av --exclude='.git' --exclude='target_repo' ./ target_repo/
+          
+          # Push to target repository
+          cd target_repo
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "Deploy from engineeringExam"
+          git push origin main

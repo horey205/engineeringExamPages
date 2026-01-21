@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기사 기출문제 서비스 포털</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+
+    <div class="container" id="login-container">
+        <div class="glass-card login-card">
+            <div class="logo-area">📚</div>
+            <h1 class="service-title">
+                <span class="accent">지적기사</span> 및<br>
+                <span class="accent">측량및지형공간정보기사</span><br>
+                기출문제
+            </h1>
+            <p class="subtitle">서비스 이용을 위해 로그인해주세요.</p>
+
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">아이디</label>
+                    <input type="text" id="username" placeholder="Enter your ID" autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" placeholder="Enter your Password"
+                        autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-primary">
+                    로그인 <span class="arrow">→</span>
+                </button>
+            </form>
+            <p id="error-message" class="error-msg"></p>
+        </div>
+    </div>
+
+    <div class="container hidden" id="selection-container">
+        <header>
+            <h1 class="fade-in">서비스 선택</h1>
+            <p class="subtitle fade-in">원하시는 서비스를 선택해주세요.</p>
+        </header>
+
+        <div class="services-grid">
+            <a href="./지적기사/index.html" class="service-card slide-up delay-1">
+                <div class="card-content">
+                    <div class="icon-circle">📝</div>
+                    <h2>지적기사</h2>
+                    <p>지적기사 기출문제 풀이 및 학습</p>
+                </div>
+                <div class="card-bg"></div>
+            </a>
+
+            <a href="./측량및지형공간정보기사/index.html" class="service-card slide-up delay-2">
+                <div class="card-content">
+                    <div class="icon-circle">🗺️</div>
+                    <h2>측량 및 지형공간<br>정보 기사</h2>
+                    <p>측량 및 지형공간정보 기사 학습</p>
+                </div>
+                <div class="card-bg"></div>
+            </a>
+        </div>
+
+        <button id="logout-btn" class="btn-text fade-in delay-3">로그아웃</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Secure Hashed Credentials (SHA-256)
     // 'user' -> 04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb
-    // 'user2685' -> 6370701198533b666a6a8f108f9ac1d73c52e825a09282247fb2572626e2552e
+    // 'user2685' -> 2ce7c4e813cdec5d49d684e60c591c24f5ad0c3d1e174fe9fd5cb7161047983d
     const USER_HASH = '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb';
-    const PASS_HASH = '6370701198533b666a6a8f108f9ac1d73c52e825a09282247fb2572626e2552e';
+    const PASS_HASH = '2ce7c4e813cdec5d49d684e60c591c24f5ad0c3d1e174fe9fd5cb7161047983d';
 
     // Helper to calculate SHA-256 hash
     async function sha256(message) {

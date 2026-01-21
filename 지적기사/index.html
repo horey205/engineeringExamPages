@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
+    <script>
+        if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = '../index.html';
+        }
+    </script>
 </head>
 
 <body class="dark-mode">
@@ -17,6 +22,9 @@
         <!-- Landing Section -->
         <section id="landing" class="screen">
             <div class="hero">
+                <a href="../index.html" class="glass-btn back-to-portal"
+                    style="text-decoration: none; display: inline-block; margin-bottom: 20px; font-size: 0.9rem;">🏠 포털로
+                    돌아가기</a>
                 <h1>지적기사 <span class="gradient-text">기출정복</span></h1>
                 <p>전회차 기출문제 풀이</p>
 
@@ -27,42 +35,42 @@
                 </div>
 
                 <div class="subject-grid">
-                    
-                <div class="subject-card glass">
-                    <h4>📐 지적측량</h4>
-                    <div class="button-group">
-                        <button class="primary-btn" onclick="startQuiz('지적측량', 'study')">학습하기</button>
-                        <button class="glass-btn" onclick="startQuiz('지적측량', 'exam')">모의고사</button>
+
+                    <div class="subject-card glass">
+                        <h4>📐 지적측량</h4>
+                        <div class="button-group">
+                            <button class="primary-btn" onclick="startQuiz('지적측량', 'study')">학습하기</button>
+                            <button class="glass-btn" onclick="startQuiz('지적측량', 'exam')">모의고사</button>
+                        </div>
                     </div>
-                </div>
-                <div class="subject-card glass">
-                    <h4>🏗️ 응용측량</h4>
-                    <div class="button-group">
-                        <button class="primary-btn" onclick="startQuiz('응용측량', 'study')">학습하기</button>
-                        <button class="glass-btn" onclick="startQuiz('응용측량', 'exam')">모의고사</button>
+                    <div class="subject-card glass">
+                        <h4>🏗️ 응용측량</h4>
+                        <div class="button-group">
+                            <button class="primary-btn" onclick="startQuiz('응용측량', 'study')">학습하기</button>
+                            <button class="glass-btn" onclick="startQuiz('응용측량', 'exam')">모의고사</button>
+                        </div>
                     </div>
-                </div>
-                <div class="subject-card glass">
-                    <h4>💻 토지정보체계론</h4>
-                    <div class="button-group">
-                        <button class="primary-btn" onclick="startQuiz('토지정보체계론', 'study')">학습하기</button>
-                        <button class="glass-btn" onclick="startQuiz('토지정보체계론', 'exam')">모의고사</button>
+                    <div class="subject-card glass">
+                        <h4>💻 토지정보체계론</h4>
+                        <div class="button-group">
+                            <button class="primary-btn" onclick="startQuiz('토지정보체계론', 'study')">학습하기</button>
+                            <button class="glass-btn" onclick="startQuiz('토지정보체계론', 'exam')">모의고사</button>
+                        </div>
                     </div>
-                </div>
-                <div class="subject-card glass">
-                    <h4>📚 지적학</h4>
-                    <div class="button-group">
-                        <button class="primary-btn" onclick="startQuiz('지적학', 'study')">학습하기</button>
-                        <button class="glass-btn" onclick="startQuiz('지적학', 'exam')">모의고사</button>
+                    <div class="subject-card glass">
+                        <h4>📚 지적학</h4>
+                        <div class="button-group">
+                            <button class="primary-btn" onclick="startQuiz('지적학', 'study')">학습하기</button>
+                            <button class="glass-btn" onclick="startQuiz('지적학', 'exam')">모의고사</button>
+                        </div>
                     </div>
-                </div>
-                <div class="subject-card glass">
-                    <h4>⚖️ 지적관계법규</h4>
-                    <div class="button-group">
-                        <button class="primary-btn" onclick="startQuiz('지적관계법규', 'study')">학습하기</button>
-                        <button class="glass-btn" onclick="startQuiz('지적관계법규', 'exam')">모의고사</button>
+                    <div class="subject-card glass">
+                        <h4>⚖️ 지적관계법규</h4>
+                        <div class="button-group">
+                            <button class="primary-btn" onclick="startQuiz('지적관계법규', 'study')">학습하기</button>
+                            <button class="glass-btn" onclick="startQuiz('지적관계법규', 'exam')">모의고사</button>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
             <div class="stats-overview">
@@ -97,7 +105,8 @@
                             <span id="curr-subject" class="tag">범위</span>
                             <span id="curr-num" class="q-id">문 1.</span>
                         </div>
-                        <span id="q-date" class="q-date" style="font-size: 0.8rem; color: var(--text-muted);">2020. 8. 22.</span>
+                        <span id="q-date" class="q-date" style="font-size: 0.8rem; color: var(--text-muted);">2020. 8.
+                            22.</span>
                     </div>
                     <div id="q-text" class="q-content">
                         질문 내용

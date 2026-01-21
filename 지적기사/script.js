@@ -1,3 +1,8 @@
+// Auth Check: Redirect to login if not logged in
+if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+    window.location.href = '../index.html';
+}
+
 let allQuestions = [];
 let currentQuiz = [];
 let currentIndex = 0;
@@ -20,7 +25,7 @@ function initQuiz() {
         const countElem = document.getElementById('total-q-count');
         if (countElem) countElem.innerText = allQuestions.length + " 문항";
         if (allQuestions.length > 0) {
-             console.log("Example Q:", allQuestions[0]);
+            console.log("Example Q:", allQuestions[0]);
         }
     } else {
         console.error("questions.js failed to load.");
@@ -54,7 +59,7 @@ function startQuiz(subject, mode) {
     // For now, since data is segregated by folder, we might not need strict source filtering
     // unless 'selectedSource' logic is desired.
     // current dataset source format: "지적기사 (2022-03-05)"
-    
+
     /* 
     if (selectedSource === '기출') {
          // Implement if needed
@@ -180,14 +185,14 @@ function checkAnswer(selectedIdx, isTimeout = false) {
     if (timer) clearInterval(timer);
 
     const q = currentQuiz[currentIndex];
-    const correctAns = parseInt(q.answer); 
+    const correctAns = parseInt(q.answer);
 
     const isCorrect = selectedIdx === correctAns;
 
     const options = document.querySelectorAll('.option-btn');
     options.forEach((btn, idx) => {
         btn.disabled = true;
-        
+
         if (idx + 1 === correctAns) {
             btn.classList.add('correct');
         } else if (idx + 1 === selectedIdx) {
